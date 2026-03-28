@@ -1,0 +1,21 @@
+﻿{
+  "name": "agi-blog-automation",
+  "version": "1.0.0",
+  "description": "Framework Unificado de Qualidade (UQF) - Testes E2E, API e Performance",
+  "main": "index.js",
+  "author": "Eduardo Lima de Sousa",
+  "license": "ISC",
+  "scripts": {
+    "test": "playwright test",
+    "test:web": "playwright test --project=chromium",
+    "test:mobile": "playwright test --project='Mobile Chrome'",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "report:full": "powershell -ExecutionPolicy Bypass -Command \"if (Test-Path 'allure-results') { Get-ChildItem 'allure-results' -Exclude 'history' | Remove-Item -Recurse -Force }\" && npx playwright test && powershell -ExecutionPolicy Bypass -File allure-metadata.ps1 && npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "allure-commandline": "^2.38.1",
+    "allure-playwright": "^3.6.0"
+  }
+}
