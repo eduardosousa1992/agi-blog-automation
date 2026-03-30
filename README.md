@@ -48,8 +48,14 @@ Para garantir a máxima confiabilidade, o UQF opera como um sistema integrado de
 
 ---
 
-## 🚀 Quick Start (Zero Fricção)
+## 🚀 Guia de Execução (Quick Start)
 
+Para garantir a integridade dos dados e a geração correta dos dashboards de governança, siga os comandos abaixo na ordem:
+
+### 1. Preparação do Ambiente
+Clone o repositório e instale todas as dependências do framework:
 ```bash
-# Clone, Instale e Extraia Valor:
-git clone [https://github.com/eduardosousa1992/agi-blog-automation.git](https://github.com/eduardosousa1992/agi-blog-automation.git) && cd agi-blog-automation && npm install && npm run report:full
+git clone [https://github.com/eduardosousa1992/agi-blog-automation.git](https://github.com/eduardosousa1992/agi-blog-automation.git)
+cd agi-blog-automation
+npm install
+npx playwright install --with-deps
