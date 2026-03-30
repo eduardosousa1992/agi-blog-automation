@@ -1,59 +1,64 @@
 # Unified Quality Framework (UQF) 🚀
 
-> **Este projeto não é apenas uma suíte de automação de testes.**
-> 
-> Ele é um **Unified Quality Framework (UQF)**: uma solução de engenharia de ponta a ponta que integra testes funcionais, auditoria de contratos e observabilidade de performance em uma única camada de governança.
+> **Este projeto não é apenas uma suíte de automação. É um ecossistema de Engenharia de Qualidade projetado para fornecer garantia de software escalável, observável e orientada a dados (data-driven).**
 
 ---
 
-## 🎯 Problemas que esta solução resolve
+## 🎯 Problemas de Negócio que o UQF Resolve
 
-Em ambientes corporativos de alta criticidade, como o setor financeiro, automações isoladas falham em entregar valor real. O **UQF** foi desenhado para eliminar:
+Diferente de scripts isolados, o **UQF** atua como uma ponte entre o desenvolvimento e a operação, eliminando:
 
-* **Falta de visibilidade de qualidade:** Dashboard centralizado com resultados técnicos e de negócio.
-* **Ausência de métricas integradas:** Latência e throughput avaliados simultaneamente à funcionalidade.
-* **Testes isolados sem contexto:** Rastreabilidade total desde o comportamento (BDD) até o impacto na infraestrutura.
-
----
-
-## 🛠️ Pilares Estratégicos (Diferenciais)
-
-### 1. Unified Quality Framework (UQF)
-Arquitetura baseada em **Page Object Model (POM)** e **Shift-left**, garantindo que a qualidade seja validada no estágio mais precoce possível do ciclo de desenvolvimento.
-
-### 2. Camada de Testes Baseada em Dados (Data-Driven)
-Validação de contratos de API (REST/JSON) com foco em resiliência, garantindo que mudanças no backend não quebrem a experiência do usuário final.
-
-### 3. Integração de Observabilidade de Performance
-Diferente de suítes comuns, o UQF integra o **k6** para monitorar SLAs de performance. Não validamos apenas se o sistema "funciona", mas se ele "aguenta o tráfego".
+* **Falta de Observabilidade:** Transforma logs brutos em insights acionáveis para tomada de decisão em tempo real.
+* **Silos de Testes:** Unifica a validação funcional e a medição de performance em um único pipeline de execução.
+* **Incerteza de Escalabilidade:** Garante a confiabilidade do sistema sob carga antes mesmo de chegar em produção (*Shift-left*).
 
 ---
 
-## 📊 Governança e Métricas (Observabilidade)
+## 🏗️ Arquitetura de Decisão e Fluxo de Dados
 
-A transparência é o nosso principal KPI. O framework gera relatórios automáticos via **Allure Report**, fornecendo:
+O diferencial do UQF não está nas ferramentas isoladas, mas em como elas funcionam como um **sistema integrado**:
 
-* **Visibilidade por Funcionalidade:** Aba de *Behaviors* organizada por Features e Stories.
-* **Métricas de Performance Reais:** Injeção de P95, Throughput e status de SLA diretamente no dashboard.
-* **Categorização Inteligente:** Classificação automática de falhas (Bugs de Negócio vs. Falhas de Infraestrutura).
+1.  **Playwright** gera eventos de interação e captura o comportamento do usuário.
+2.  **K6** mede a performance e latência em tempo real sob carga.
+3.  **Dados são agregados** e correlacionados entre falhas funcionais e gargalos de infraestrutura.
+4.  **Allure Framework** centraliza esses insights em um dashboard de governança executiva.
+
+---
+
+## 💎 Diferenciais Estratégicos (Seu Ouro 💰)
+
+* **Observabilidade de Qualidade:** Rastreamento de latência sob carga (P95) diretamente integrado ao reporte funcional.
+* **QA Orientado a Dados:** Validação de contratos de API que transforma a execução de testes em visibilidade de confiabilidade E2E.
+* **Integração de Performance:** Conectamos o "funciona?" com o "aguenta?", reduzindo o risco de incidentes em produção.
+
+---
+
+## 📊 Evidências de Valor (Insights em Ação)
 
 ![Dashboard Allure Report](./allure-dashboard.png)
-*Exemplo de Dashboard Consolidado: Latência P95: 228,55 ms | Sucesso: 100% | Executores Identificados*
+*Legenda Estratégica:*
+* **Rastreamento de Latência:** Monitoramento P95 em 228,55 ms para garantir o SLA.
+* **Validação de Confiabilidade:** 100% de taxa de sucesso em ambientes Web e Mobile.
+* **Visibilidade E2E:** Identificação imediata de bugs de negócio vs. falhas de infraestrutura.
 
 ---
 
-## 💻 Stack Tecnológica
+## 💻 Stack Tecnológica (Pipeline de Qualidade)
 
-* **Linguagem:** TypeScript
-* **Engine E2E:** Playwright (Web & Mobile)
-* **Performance:** k6
-* **Reporte:** Allure Framework
-* **CI/CD Ready:** Configurado para execução em esteiras automatizadas.
+* **Linguagem:** TypeScript (Tipagem forte para escalabilidade)
+* **Engine E2E:** Playwright (Resiliência e Paralelismo)
+* **Performance:** K6 (Observabilidade de Carga)
+* **Governança:** Allure Framework (Centralizador de Insights)
 
 ---
 
-## 🚀 Como Executar
+## 🚀 Quick Start (Zero Fricção)
 
-1. **Instalar dependências:**
-   ```bash
-   npm install
+Copie, cole e execute. Simples assim.
+
+```bash
+# 1. Clone o repositório e instale as dependências
+git clone [https://github.com/eduardosousa1992/agi-blog-automation.git](https://github.com/eduardosousa1992/agi-blog-automation.git) && cd agi-blog-automation && npm install
+
+# 2. Execute o framework completo (Web + API + Performance + Report)
+npm run report:full
