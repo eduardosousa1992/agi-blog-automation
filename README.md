@@ -37,8 +37,8 @@ A transparência é o nosso principal KPI. O framework gera relatórios automát
 * **Métricas de Performance Reais:** Injeção de P95, Throughput e status de SLA diretamente no dashboard.
 * **Categorização Inteligente:** Classificação automática de falhas (Bugs de Negócio vs. Falhas de Infraestrutura).
 
-> **[INSIRA AQUI O PRINT DO SEU ALLURE (image_fba16d.png)]**
-> *Exemplo de Dashboard: Latência P95: 228,55 ms | Sucesso: 100%*
+![Dashboard Allure Report](./allure-dashboard.png)
+*Exemplo de Dashboard Consolidado: Latência P95: 228,55 ms | Sucesso: 100% | Executores Identificados*
 
 ---
 
