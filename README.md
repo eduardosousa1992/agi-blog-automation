@@ -1,47 +1,59 @@
-# Unified Quality Framework (UQF) - Agibank Blog Automation
+# Unified Quality Framework (UQF) 🚀
 
-![Playwright](https://img.shields.io/badge/Playwright-31C653?style=for-the-badge&logo=Playwright&logoColor=white)
-![K6](https://img.shields.io/badge/K6-7D64FF?style=for-the-badge&logo=k6&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Allure](https://img.shields.io/badge/Allure_Report-ff69b4?style=for-the-badge&logo=allure)
-
-## 1. Contexto e Proposta (O "Porquê")
-O Agibank demanda uma qualidade confiável e, acima de tudo, mensurável. O **UQF (Unified Quality Framework)** foi desenvolvido para garantir que o ecossistema do Blog do Agibank possua uma validação técnica de alto nível, transformando testes em uma solução de negócio escalável, auditável e resiliente. 
-
-Este projeto não apenas identifica bugs; ele fornece dados para tomadas de decisão estratégicas.
+> **Este projeto não é apenas uma suíte de automação de testes.**
+> 
+> Ele é um **Unified Quality Framework (UQF)**: uma solução de engenharia de ponta a ponta que integra testes funcionais, auditoria de contratos e observabilidade de performance em uma única camada de governança.
 
 ---
 
-## 2. Arquitetura e Stack (O "Como")
-A stack foi selecionada para maximizar o ROI (Retorno sobre Investimento) da automação:
+## 🎯 Problemas que esta solução resolve
 
-* **Playwright (E2E & API):** Garante testes robustos, multiplataforma (Desktop e Mobile) e execução paralela nativa, reduzindo o tempo de feedback para o time de desenvolvimento.
-* **K6 (Performance):** Implementado para fornecer métricas de latência P95 e throughput de forma automática, permitindo antecipar gargalos de infraestrutura.
-* **Allure Report (Visibilidade):** Centraliza a observabilidade dos testes para stakeholders, transformando logs técnicos em dashboards executivos claros.
+Em ambientes corporativos de alta criticidade, como o setor financeiro, automações isoladas falham em entregar valor real. O **UQF** foi desenhado para eliminar:
 
----
-
-## 3. Diferenciais Técnicos (O "Uau")
-* **Governança de Métricas Automática:** O framework extrai KPIs reais do K6 (como a latência P95) e os injeta dinamicamente no relatório Allure através de um motor de pós-processamento via PowerShell/Regex.
-* **Socio-Technical Insight:** Projetado com foco em *Shift-Left*, permitindo que o time de desenvolvimento execute e audite a qualidade em segundos.
-* **Modularidade de Alta Performance:** Arquitetura plugável que permite adicionar novos domínios de teste e métricas sem necessidade de refatoração do core.
+* **Falta de visibilidade de qualidade:** Dashboard centralizado com resultados técnicos e de negócio.
+* **Ausência de métricas integradas:** Latência e throughput avaliados simultaneamente à funcionalidade.
+* **Testes isolados sem contexto:** Rastreabilidade total desde o comportamento (BDD) até o impacto na infraestrutura.
 
 ---
 
-## 4. Guia de Execução (Developer Experience - DX)
+## 🛠️ Pilares Estratégicos (Diferenciais)
 
-### 🛠️ Pré-requisitos
-* [Node.js](https://nodejs.org/) (v18+)
-* [Java JDK](https://www.oracle.com/java/technologies/downloads/) (Necessário para renderizar o Allure)
-* [K6](https://k6.io/docs/getting-started/installation/)
+### 1. Unified Quality Framework (UQF)
+Arquitetura baseada em **Page Object Model (POM)** e **Shift-left**, garantindo que a qualidade seja validada no estágio mais precoce possível do ciclo de desenvolvimento.
 
-### 🚀 Instalação e Configuração
-```bash
-# Clone o repositório
-git clone [https://github.com/eduardosousa1992/agi-blog-automation.git](https://github.com/eduardosousa1992/agi-blog-automation.git)
+### 2. Camada de Testes Baseada em Dados (Data-Driven)
+Validação de contratos de API (REST/JSON) com foco em resiliência, garantindo que mudanças no backend não quebrem a experiência do usuário final.
 
-# Instale as dependências
-npm install
+### 3. Integração de Observabilidade de Performance
+Diferente de suítes comuns, o UQF integra o **k6** para monitorar SLAs de performance. Não validamos apenas se o sistema "funciona", mas se ele "aguenta o tráfego".
 
-# Instale os binários dos browsers
-npx playwright install
+---
+
+## 📊 Governança e Métricas (Observabilidade)
+
+A transparência é o nosso principal KPI. O framework gera relatórios automáticos via **Allure Report**, fornecendo:
+
+* **Visibilidade por Funcionalidade:** Aba de *Behaviors* organizada por Features e Stories.
+* **Métricas de Performance Reais:** Injeção de P95, Throughput e status de SLA diretamente no dashboard.
+* **Categorização Inteligente:** Classificação automática de falhas (Bugs de Negócio vs. Falhas de Infraestrutura).
+
+> **[INSIRA AQUI O PRINT DO SEU ALLURE (image_fba16d.png)]**
+> *Exemplo de Dashboard: Latência P95: 228,55 ms | Sucesso: 100%*
+
+---
+
+## 💻 Stack Tecnológica
+
+* **Linguagem:** TypeScript
+* **Engine E2E:** Playwright (Web & Mobile)
+* **Performance:** k6
+* **Reporte:** Allure Framework
+* **CI/CD Ready:** Configurado para execução em esteiras automatizadas.
+
+---
+
+## 🚀 Como Executar
+
+1. **Instalar dependências:**
+   ```bash
+   npm install
