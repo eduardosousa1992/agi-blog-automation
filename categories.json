@@ -1,0 +1,4 @@
+﻿[
+  { "name": "Falhas de Infraestrutura", "matchedStatuses": ["broken"] },
+  { "name": "Bugs de Negócio/SLA", "matchedStatuses": ["failed"] }
+]

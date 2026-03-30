@@ -1,8 +1,8 @@
 ﻿node_modules/
+test-results/
 allure-results/
 allure-report/
-test-results/
 playwright-report/
 .env
-summary.json
 *.log
+dist/

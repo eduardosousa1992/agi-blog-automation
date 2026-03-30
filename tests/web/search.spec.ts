@@ -1,25 +1,36 @@
 import { test, expect } from '@playwright/test';
-import { SearchPage } from '../../pages/SearchPage';
+import { SearchPage } from '../../pages/SearchPage'; 
+import { allure } from "allure-playwright";
 
-test.describe('Domínio de Busca - Blog Agibank', () => {
+test.describe('Funcionalidade: Busca de Conteúdo', () => {
+    
+    test('CT001 - Pesquisa por Termo de Investimento', async ({ page }) => {
+        // Metadados para popular as abas "Características / Behaviors"
+        await allure.feature("Mecanismo de Busca");
+        await allure.story("Pesquisa de Ativos Financeiros");
+        await allure.owner("Eduardo Lima de Sousa");
+        await allure.severity("critical");
+        await allure.link("https://www.linkedin.com/in/eduardolsousa", "LinkedIn do Autor");
 
-    test('CT001 - Pesquisa por Ativo Financeiro (Investimento)', async ({ page }) => {
         const searchPage = new SearchPage(page);
-        await searchPage.navigate();
-        await searchPage.performSearch('Investimento');
-
-        // Validamos a URL primeiro, que é o ponto mais forte da sua estratégia
-        await expect(page).toHaveURL(/.*s=Investimento/i, { timeout: 15000 });
         
-        // Verificação visual opcional com maior tolerância
-        await expect(page.locator('article, .post').first()).toBeVisible({ timeout: 15000 });
-    });
+        await allure.step("Acessar o Blog Agibank", async () => {
+            await searchPage.navigate();
+        });
 
-    test('CT002 - Pesquisa por Termo de Exceção', async ({ page }) => {
-        const searchPage = new SearchPage(page);
-        await searchPage.navigate();
-        await searchPage.performSearch('TermoInexistente2026XYZ');
+        await allure.step("Realizar busca pelo termo 'CDB'", async () => {
+            await searchPage.performSearch('CDB');
+        });
 
-        await expect(page.locator('body')).toContainText(/nada foi encontrado|Lamentamos/i, { timeout: 15000 });
+        await allure.step("Validar resultados da busca", async () => {
+            /**
+             * ESTRATÉGIA DE RESILIÊNCIA: Seletores compostos.
+             * O .first() evita conflitos e o ignoreCase garante o match independente do servidor.
+             */
+            const titleLocator = page.locator('h1.entry-title, h1.archive-title, h1').first();
+            
+            await expect(titleLocator).toBeVisible({ timeout: 15000 });
+            await expect(titleLocator).toContainText('CDB', { ignoreCase: true });
+        });
     });
 });

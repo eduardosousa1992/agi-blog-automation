@@ -8,7 +8,7 @@ export class SearchPage {
     }
 
     async navigate() {
-        // Usamos 'commit' para ser o mais rápido possível e evitar timeouts de scripts
+        // Navegação inicial com estratégia de velocidade
         await this.page.goto('https://blog.agibank.com.br/', { 
             waitUntil: 'commit', 
             timeout: 60000 
@@ -17,11 +17,13 @@ export class SearchPage {
 
     async performSearch(term: string) {
         const safeTerm = encodeURIComponent(term);
-        // Navegação direta via URL (Sua estratégia vencedora)
-        // Adicionamos um pequeno delay e mudamos para 'commit' para evitar o ERR_ABORTED
-        await this.page.waitForTimeout(1000); 
-        await this.page.goto('https://blog.agibank.com.br/?s=' + safeTerm, { 
-            waitUntil: 'commit' 
+        /**
+         * ESTRATÉGIA SÊNIOR: Para evitar o ERR_ABORTED (especialmente em Mobile),
+         * usamos 'load' na busca para garantir a estabilidade da conexão.
+         */
+        await this.page.goto(`https://blog.agibank.com.br/?s=${safeTerm}`, { 
+            waitUntil: 'load',
+            timeout: 30000
         });
     }
 }
